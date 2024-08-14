@@ -1,4 +1,4 @@
-# Just a simple HTML clock
+# Just a simple HTML clock (DEMO)
 
 Local time: https://end888160.github.io/clock.html
 
