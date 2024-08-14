@@ -1,6 +1,6 @@
 # Just a simple HTML clock (DEMO)
 
-Inspired by [StefanGrace's Big Clock](https://github.com/StefanGrace/Big_Clock)
+Inspired by [StefanGrace's Big_Clock](https://github.com/StefanGrace/Big_Clock)
 
 Local time: https://end888160.github.io/clock.html
 
