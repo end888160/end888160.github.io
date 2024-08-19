@@ -1,5 +1,3 @@
-# END888160's website
-
 ## Just a simple HTML clock (DEMO)
 
 Inspired by [StefanGrace&#39;s Big_Clock](https://github.com/StefanGrace/Big_Clock)
