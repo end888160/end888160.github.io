@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple ISO8601 Time
+    <title>Simple HTMLClock</title>
     <style>
     h1{
         text-align: center;
@@ -19,13 +20,13 @@
         overflow: hidden; /* Hide scrollbars */
     }
     @media (prefers-color-scheme: light) {
-        body {
+        html {
         background-color: white;
         color: black;
         }
     }
     @media (prefers-color-scheme: dark) {
-        body {
+        html {
         background-color: black;
         color: white;
         }
@@ -43,13 +44,13 @@
         function clock() {
             const today = new Date();
 
-            const year = today.getUTCFullYear();
-            const months = today.getUTCMonth() + 1;
-            const days = today.getUTCDate();
-            const hours = today.getUTCHours();
-            const minutes = today.getUTCMinutes();
-            const seconds = today.getUTCSeconds();
-            const mseconds = today.getUTCMilliseconds();
+            const year = today.getFullYear();
+            const months = today.getMonth() + 1;
+            const days = today.getDate();
+            const hours = today.getHours();
+            const minutes = today.getMinutes();
+            const seconds = today.getSeconds();
+            const mseconds = today.getMilliseconds();
 
             const month = months < 10 ? "0" + months : months;
             const day = days < 10 ? "0" + days : days;
@@ -59,7 +60,7 @@
             const msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
             const date = year + "-" + month + "-" + day;
             const time = hour + ":" + minute + ":" + second + "." + msecond;
-            const dateTime = date + "T" + time + "Z";
+            const dateTime = date + " " + time;
             document.getElementById("datetime").innerHTML = dateTime;
             setTimeout(clock, 1);
         }
