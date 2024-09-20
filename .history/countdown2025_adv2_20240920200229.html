@@ -105,12 +105,7 @@ var x = setInterval(function() {
     document.getElementById("minutes").innerHTML = minute;
     document.getElementById("seconds").innerHTML = second;
     document.getElementById("mseconds").innerHTML = msecond;
-    if ( currentTimeZone === "undefined" ) {
-        document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN"
-    } else {
-        document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;;
-    }
-    
+    document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;;
     
     // If the count down is finished, write some text
     if (distance < 0) {
