@@ -18,6 +18,7 @@
     .countdown-item {
         margin: 0 10px;
         text-align: center;
+        text-align: center;
     }
     
     .countdown-value {
@@ -29,7 +30,10 @@
         font-size: 0.8em;
         color: #777;
     }
-
+    td {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     h1 {
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
@@ -52,28 +56,21 @@
 <body>
     <h1 id="header"></h1>
     <div id="countdown">
-        <div class="countdown-item">
-            <span class="countdown-value" id="days"></span>
-            <span class="countdown-label">Days</span>
-        </div>
-        <div class="countdown-item">
-            <span class="countdown-value" id="hours"></span>
-            <span class="countdown-label">Hours</span>
-        </div>
-        <div class="countdown-item">
-            <span class="countdown-value" id="minutes"></span>
-            <span class="countdown-label">Minutes</span>
-        </div>
-        <div class="countdown-item">
-            <span class="countdown-value" id="seconds"></span>
-            <span class="countdown-label">Seconds</span>
-        </div>
-        <br>
-        <div class="countdown-item">
-            <span class="countdown-value" id="mseconds"></span>
-            <span class="countdown-label"></span>
-        </div>
-    </div>
+    <table class="countdown-item">
+    <tr>
+        <td><span class="countdown-value" id="days"></span></td>
+        <td><span class="countdown-value" id="hours"></span></td>
+        <td><span class="countdown-value" id="minutes"></span></td>
+        <td><span class="countdown-value" id="seconds"></span></td>
+        <td><span class="countdown-value" id="mseconds"></span><span class="countdown-label"></span></td>
+    </tr>
+        <td><span class="countdown-label">Days</span></td>
+        <td><span class="countdown-label">Hours</span></td>
+        <td><span class="countdown-label">Minutes</span></td>
+        <td><span class="countdown-label">Seconds</span></td>
+        <td></td>
+</table>
+            
     <script>
        
 // Update the count down every 1 second]
@@ -116,7 +113,7 @@ var x = setInterval(function() {
         document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
     }
 }, 0);
-
+document.title = "Countdown to " + countDownTarget;
     </script>
 </body>
 </html>
