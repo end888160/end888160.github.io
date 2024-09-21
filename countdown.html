@@ -6,10 +6,11 @@
 	<meta name="description" content="Let's celebrate the New Year!">
 	<title>Countdown</title>
 	<style>
-	#countdown {
+	.countdown {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: xx-large;
 		margin-top: 5%;
@@ -19,26 +20,28 @@
 	.countdown-item {
 		margin: 0 10px;
 		text-align: center;
+		
 	}
 	
 	.countdown-value {
 		font-size: 2em;
 		font-weight: bold;
+		padding-left: 20px;
+		padding-right: 20px;
+		
 	}
 	
 	.countdown-label {
 		font-size: 0.8em;
+		
 		color: #777;
 	}
-	td {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	h1,h2 {
+	h1 {
 		text-align: center;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: xx-large;
 	}
+	
 	@media (prefers-color-scheme: light) {
 		html {
 			background-color: white;
@@ -60,26 +63,46 @@
 			color: white;
 		}
 	}
-	
+	@media only screen and (max-width: 700px) {
+		.countdown {
+			display: block;
+		}
+		.countdown-value {
+			padding-top: 25px;
+
+		}
+	}
 	</style>
 </head>
 <body>
 	<h1 id="header"></h1>
-	<div id="countdown">
-	<table class="countdown-item">
-	<tr>
-		<td><span class="countdown-value" id="days"></span></td>
-		<td><span class="countdown-value" id="hours"></span></td>
-		<td><span class="countdown-value" id="minutes"></span></td>
-		<td><span class="countdown-value" id="seconds"></span></td>
-		<td><span class="countdown-value" id="mseconds"></span><span class="countdown-label"></span></td>
-	</tr>
-		<td><span class="countdown-label">Days</span></td>
-		<td><span class="countdown-label">Hours</span></td>
-		<td><span class="countdown-label">Minutes</span></td>
-		<td><span class="countdown-label">Seconds</span></td>
-		<td></td>
-</table>
+	<div class="countdown">
+	<div class="countdown-item">
+		<div class="countdown-value" id="days"></div>
+		<div class="countdown-label">Days</div>
+	</div>
+	<div class="countdown-item">
+		<div class="countdown-value" id="hours"></div>
+		<div class="countdown-label">Hours</div>
+	</div>
+	<div class="countdown-item">
+		<div class="countdown-value" id="minutes"></div>
+		<div class="countdown-label">Minutes</div>
+	</div>
+	<div class="countdown-item">
+		<div class="countdown-value" id="seconds"></div>
+		<div class="countdown-label">Seconds</div>
+	</div>
+	<div class="countdown-item">
+		<div class="countdown-value" id="mseconds"></div>
+		<div class="countdown-label"><br></div>
+	</div>
+	<div class="countdown-item">
+		
+		
+		
+		
+	</div>
 </div>
 
 <script>
