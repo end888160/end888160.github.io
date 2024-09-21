@@ -42,10 +42,16 @@
     }
     @media (prefers-color-scheme: dark) {
 		#countdown {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: xx-large;
+			margin-top: 5%;
 			color: #bbb;
 		}
 		}
 		.countdown-label {
+			font-size: 0.8em;
 			color: #666;
 		}
 		html {
@@ -76,11 +82,10 @@
        
 // Update the count down every 1 second]
 
-var countDownTarget = new Date().getFullYear() + 1;
-
 var x = setInterval(function() {
 
     // Set the date we're counting down to
+    var countDownTarget = 2025
     var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
     var currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
