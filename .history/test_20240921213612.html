@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<style>
+	html {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+#countDownProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#countDownBar {
+  width: 10%;
+  height: 30px;
+  background-color: #04AA6D;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+<body>
+
+<h1 id="caption"></h1>
+
+<div id="countDownProgress">
+  <div id="countDownBar"></div>
+</div>
+
+<br>
+
+<script>
+	var i=0
+function progress() {
+	var countDownTarget = new Date().getFullYear() + 1;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("countDownBar");
+    var width = 0;
+    function frame() {
+      if (((new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) / ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) * 100).toFixed(8) >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        elem.style.width = ((new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) / ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) * 100).toFixed(8) + "%";
+        elem.innerHTML = ((new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) / ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) * 100).toFixed(8)  + "%";
+      }
+    }
+	setInterval(frame, 50);
+	document.getElementById("caption").innerHTML = countDownTarget -1 + " Progressbar";
+  }
+
+}
+function count() {
+	progress();
+	
+	setTimeout(count, 1)
+}
+count()
+</script>
+
+</body>
+</html>

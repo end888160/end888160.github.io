@@ -1,0 +1,12 @@
+<h1 id="test"></h1>
+<h2 id="debug"></h2>
+<script>
+	var countDownTarget = 2025
+	function percent() {
+		var target = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
+		var current = new Date().getTime();
+		document.getElementById("test").innerHTML = current / target * 100 + "%"
+		setTimeout(percent, 1);
+	}
+	percent()
+</script>

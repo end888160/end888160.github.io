@@ -1,0 +1,11 @@
+<h1 id="test"></h1>
+<h2 id="debug"></h2>
+<script>
+	function percent() {
+		var countDownTarget = 2025
+		var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
+		var current = new Date().getTime();
+		setTimeout(percent, 1);
+	}
+	document.getElementById("test").innerHTML = countDownDate
+</script>
