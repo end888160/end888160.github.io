@@ -13,27 +13,13 @@
 #countDownBar {
   width: 10%;
   height: 30px;
-  background-color: #2f8;
+  background-color: #04AA6D;
   text-align: center;
   line-height: 30px;
-  color: #111;
+  color: white;
   border-radius:1cm;
   font-size: x-large;
 }
-	@media (prefers-color-scheme: dark) {
-    #countDownProgress {
-      background-color: #333;
-    }
-		#countDownBar {
-      background-color: #496;
-      color: #ddd;
-
-    }
-    html {
-      color: #ddd;
-      background-color: #222;
-    }
-	}
 </style>
 <body>
 
@@ -57,6 +43,7 @@ function progress() {
       document.getElementById("caption").innerHTML = new Date().getFullYear() + "-" + ((new Date().getMonth()+1) < 10 ? "0" + (new Date().getMonth()+1) : (new Date().getMonth()+1)) + "-" + (new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate()) + " Progressbar";
       if (((new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) / ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) * 100).toFixed(8) >= 100) {
         clearInterval(id);
+        clearInterval(frame);
         i = 0;
       } else {
         elem.style.width = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4) + "%";
