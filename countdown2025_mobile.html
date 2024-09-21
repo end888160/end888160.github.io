@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="新年を祝いましょう！">
-	<title>カウントダウン</title>
+	<meta name="description" content="Let's celebrate the New Year!">
+	<title>Countdown</title>
 	<style>
 	#countdown {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+		font-family: Arial, Helvetica, sans-serif;
 		font-size: xx-large;
 		margin-top: 5%;
 		color: #333;
@@ -19,6 +19,7 @@
 	.countdown-item {
 		margin: 0 10px;
 		text-align: center;
+
 	}
 	
 	.countdown-value {
@@ -31,8 +32,7 @@
 		color: #777;
 	}
 	td {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-top:30px
 	}
 	h1 {
 		text-align: center;
@@ -64,6 +64,7 @@
 			background-color: black;
 			color: white;
 		}
+	
 	</style>
 </head>
 <body>
@@ -72,16 +73,23 @@
 	<table class="countdown-item">
 	<tr>
 		<td><span class="countdown-value" id="days"></span></td>
+		<td><span class="countdown-label">Days</span></td>
+	</tr>
+	<tr>
 		<td><span class="countdown-value" id="hours"></span></td>
+		<td><span class="countdown-label">Hours</span></td>
+	</tr>
+	<tr>
 		<td><span class="countdown-value" id="minutes"></span></td>
+		<td><span class="countdown-label">Minutes</span></td>
+	</tr>
+	<tr>
 		<td><span class="countdown-value" id="seconds"></span></td>
+		<td><span class="countdown-label">Seconds</span></td>
+	</tr>
+	<tr>
 		<td><span class="countdown-value" id="mseconds"></span><span class="countdown-label"></span></td>
 	</tr>
-		<td><span class="countdown-label">日</span></td>
-		<td><span class="countdown-label">時間</span></td>
-		<td><span class="countdown-label">分</span></td>
-		<td><span class="countdown-label">秒</span></td>
-		<td></td>
 </table>
 			
 	<script>
@@ -90,7 +98,7 @@
 
 var countDownTarget = new Date().getFullYear() + 1;
 
-var x = setInterval(function() {
+function countdown() {
 
 	// Set the date we're counting down to
 	var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
@@ -120,9 +128,9 @@ var x = setInterval(function() {
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
 	if ( currentTimeZone === "undefined" ) {
-		document.getElementById("header").innerHTML = countDownTarget + "年まで"
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN"
 	} else {
-		document.getElementById("header").innerHTML = countDownTarget + "年まで"
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;
 	}
 	
 	
@@ -131,8 +139,10 @@ var x = setInterval(function() {
 		clearInterval(x);
 		document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
 	}
-}, 0);
-document.title = countDownTarget +"年へのカウントダウン";
+	setTimeout(countdown, 1);
+}
+document.title = "Countdown to " + countDownTarget;
+countdown()
 	</script>
 </body>
 </html>
