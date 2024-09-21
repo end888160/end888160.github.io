@@ -39,8 +39,8 @@
 	</div>
 	<script>
 		function clock() {
-			
 			var today = new Date();
+
 			var year = today.getFullYear();
 			var months = today.getMonth() + 1;
 			var days = today.getDate();
@@ -48,7 +48,7 @@
 			var minutes = today.getMinutes();
 			var seconds = today.getSeconds();
 			var mseconds = today.getMilliseconds();
-			
+
 			var month = months < 10 ? "0" + months : months;
 			var day = days < 10 ? "0" + days : days;
 			var hour = hours < 10 ? "0" + hours : hours;
@@ -59,9 +59,8 @@
 			var time = hour + ":" + minute + ":" + second + "." + msecond;
 			var dateTime = date + " " + time;
 			document.getElementById("datetime").innerHTML = dateTime;
-			document.title = hour + ":" + minute + ":" + second;
 			setTimeout(clock, 1);
-			
+			document.title = hours + ":" + minutes;
 		}
 		
 	clock()
