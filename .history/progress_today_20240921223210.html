@@ -41,8 +41,8 @@ function progress() {
         clearInterval(id);
         i = 0;
       } else {
-        elem.style.width = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4) + "%";
-        elem.innerHTML = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4)  + "%";
+        elem.style.width = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 6000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4) + "%";
+        elem.innerHTML = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 6000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4)  + "%";
       }
     }
 	setInterval(frame, 50);
