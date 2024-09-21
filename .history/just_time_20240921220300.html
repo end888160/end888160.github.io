@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<style>
+h1 {
+	text-align: center;
+	font-size: xx-large;
+}
+@media (prefers-color-scheme: light) {
+		body {
+		background-color: white;
+		color: black;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		body {
+		background-color: black;
+		color: white;
+		}
+	}
+</style>
+<body>
+<h1 id="time"></h1>
+<script>
+	function clock() {
+	document.getElementById("time").innerHTML = new Date().getTime();
+	setTimeout(clock, 1);
+	}
+	clock()
+</script>
+</body>
+</html>
