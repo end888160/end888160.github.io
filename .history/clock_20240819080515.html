@@ -38,6 +38,8 @@
         <h1 id="datetime"></h1>
     </div>
     <script>
+    window.addEventListener("load", () => {
+        clock();
         function clock() {
             const today = new Date();
 
@@ -61,7 +63,7 @@
             document.getElementById("datetime").innerHTML = dateTime;
             setTimeout(clock, 1);
         }
-    clock()
+    });
     </script>
 </body>
 </html>

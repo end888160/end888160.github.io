@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Clock</title>
+    <title>Simple ISO8601 Time</title>
     <style>
     h1{
         text-align: center;
@@ -12,20 +12,20 @@
         height: 80vh;
         align-items: center;
         font-size: 72px;
-        font-family: Arial, Helvetica, "Noto Sans", sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
 
     }
     body {
         overflow: hidden; /* Hide scrollbars */
     }
     @media (prefers-color-scheme: light) {
-        html {
+        body {
         background-color: white;
         color: black;
         }
     }
     @media (prefers-color-scheme: dark) {
-        html {
+        body {
         background-color: black;
         color: white;
         }
@@ -38,16 +38,18 @@
         <h1 id="datetime"></h1>
     </div>
     <script>
+    window.addEventListener("load", () => {
+        clock();
         function clock() {
             const today = new Date();
 
-            const year = today.getFullYear();
-            const months = today.getMonth() + 1;
-            const days = today.getDate();
-            const hours = today.getHours();
-            const minutes = today.getMinutes();
-            const seconds = today.getSeconds();
-            const mseconds = today.getMilliseconds();
+            const year = today.getUTCFullYear();
+            const months = today.getUTCMonth() + 1;
+            const days = today.getUTCDate();
+            const hours = today.getUTCHours();
+            const minutes = today.getUTCMinutes();
+            const seconds = today.getUTCSeconds();
+            const mseconds = today.getUTCMilliseconds();
 
             const month = months < 10 ? "0" + months : months;
             const day = days < 10 ? "0" + days : days;
@@ -57,11 +59,11 @@
             const msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
             const date = year + "-" + month + "-" + day;
             const time = hour + ":" + minute + ":" + second + "." + msecond;
-            const dateTime = date + " " + time;
+            const dateTime = date + "T" + time + "Z";
             document.getElementById("datetime").innerHTML = dateTime;
             setTimeout(clock, 1);
         }
-    clock()
+    });
     </script>
 </body>
 </html>
