@@ -39,25 +39,25 @@
     </div>
     <script>
         function clock() {
-            var today = new Date();
+            const today = new Date();
 
-            var year = today.getFullYear();
-            var months = today.getMonth() + 1;
-            var days = today.getDate();
-            var hours = today.getHours();
-            var minutes = today.getMinutes();
-            var seconds = today.getSeconds();
-            var mseconds = today.getMilliseconds();
+            const year = today.getFullYear();
+            const months = today.getMonth() + 1;
+            const days = today.getDate();
+            const hours = today.getHours();
+            const minutes = today.getMinutes();
+            const seconds = today.getSeconds();
+            const mseconds = today.getMilliseconds();
 
-            var month = months < 10 ? "0" + months : months;
-            var day = days < 10 ? "0" + days : days;
-            var hour = hours < 10 ? "0" + hours : hours;
-            var minute = minutes < 10 ? "0" + minutes : minutes;
-            var second = seconds < 10 ? "0" + seconds : seconds;
-            var msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
-            var date = year + "-" + month + "-" + day;
-            var time = hour + ":" + minute + ":" + second + "." + msecond;
-            var dateTime = date + " " + time;
+            const month = months < 10 ? "0" + months : months;
+            const day = days < 10 ? "0" + days : days;
+            const hour = hours < 10 ? "0" + hours : hours;
+            const minute = minutes < 10 ? "0" + minutes : minutes;
+            const second = seconds < 10 ? "0" + seconds : seconds;
+            const msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
+            const date = year + "-" + month + "-" + day;
+            const time = hour + ":" + minute + ":" + second + "." + msecond;
+            const dateTime = date + " " + time;
             document.getElementById("datetime").innerHTML = dateTime;
             setTimeout(clock, 1);
         }
