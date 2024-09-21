@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<h1 id="test"></h1>
-<script>
-    function timec() {
-    document.getElementById("test").innerHTML = (new Date().getHours() * 3600000 + new Date().getMinutes() * 6000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds())
-    setTimeout(timec, 1);    
-}
-    timec()  
-</script>

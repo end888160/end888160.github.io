@@ -95,13 +95,13 @@ var x = setInterval(function() {
 	// Time calculations for days, hours, minutes and seconds
 	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	const hour = hours < 10 ? "0" + hours : hours;
+	var hour = hours < 10 ? "0" + hours : hours;
 	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	const minute = minutes < 10 ? "0" + minutes : minutes;
+	var minute = minutes < 10 ? "0" + minutes : minutes;
 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-	const second = seconds < 10 ? "0" + seconds : seconds;
+	var second = seconds < 10 ? "0" + seconds : seconds;
 	var mseconds = Math.floor(distance % 1000);
-	const msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
+	var msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
 	
 	// Display the result in the element with id="countdown"
 	document.getElementById("days").innerHTML = days;

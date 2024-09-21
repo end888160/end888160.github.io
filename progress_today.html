@@ -37,6 +37,7 @@ function progress() {
     var elem = document.getElementById("countDownBar");
     var width = 0;
     function frame() {
+      document.getElementById("caption").innerHTML = new Date().getFullYear() + "-" + ((new Date().getMonth()+1) < 10 ? "0" + (new Date().getMonth()+1) : (new Date().getMonth()+1)) + "-" + (new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate()) + " Progressbar";
       if (((new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) / ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) * 100).toFixed(8) >= 100) {
         clearInterval(id);
         i = 0;
@@ -45,8 +46,8 @@ function progress() {
         elem.innerHTML = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4)  + "%";
       }
     }
+    
 	setInterval(frame, 50);
-	document.getElementById("caption").innerHTML = new Date().getFullYear() + "-" + ((new Date().getMonth()+1) < 10 ? "0" + (new Date().getMonth()+1) : (new Date().getMonth()+1)) + "-" + (new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate()) + " Progressbar";
   }
 
 }
