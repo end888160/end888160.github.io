@@ -74,14 +74,30 @@
 		<td><span class="countdown-label">Seconds</span></td>
 		<td></td>
 </table>
-			
-	<script>
+
+<h2 id="debug"></h2>
+
+<script>
 	   
 // Update the count down every 1 second]
+if ( new Date().getMonth() + 1 === 1 )  {
+    var IfMonth = true
+} else {
+	var IfMonth = "false"
+}
+if ( new Date().getDate() === 1 )  {
+    var IfDate = true
+} else {
+	var IfMonth = "false"
+}
+if ( IfMonth === IfDate ) {
+    var countDownTarget = new Date().getFullYear();
+} else {
+	var countDownTarget = new Date().getFullYear() + 1;
+}
 
-var countDownTarget = new Date().getFullYear() + 1;
 
-function countdown() {
+var x = setInterval(function countdown() {
 
 	// Set the date we're counting down to
 	var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
@@ -123,9 +139,9 @@ function countdown() {
 		document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
 	}
 	setTimeout(countdown, 1);
-}
+}, 0);
 document.title = "Countdown to " + countDownTarget;
 countdown()
-	</script>
+</script>
 </body>
 </html>
