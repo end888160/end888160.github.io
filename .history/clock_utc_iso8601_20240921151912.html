@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Simple HTML Clock</title>
+	<title>Simple ISO8601 Time</title>
 	<style>
 	h1{
 		text-align: center;
@@ -12,20 +12,20 @@
 		height: 80vh;
 		align-items: center;
 		font-size: 72px;
-		font-family: Arial, Helvetica, "Noto Sans", sans-serif;
+		font-family: Arial, Helvetica, sans-serif;
 
 	}
 	body {
 		overflow: hidden; /* Hide scrollbars */
 	}
 	@media (prefers-color-scheme: light) {
-		html {
+		body {
 		background-color: white;
 		color: black;
 		}
 	}
 	@media (prefers-color-scheme: dark) {
-		html {
+		body {
 		background-color: black;
 		color: white;
 		}
@@ -39,16 +39,16 @@
 	</div>
 	<script>
 		function clock() {
-			
 			var today = new Date();
-			var year = today.getFullYear();
-			var months = today.getMonth() + 1;
-			var days = today.getDate();
-			var hours = today.getHours();
-			var minutes = today.getMinutes();
-			var seconds = today.getSeconds();
-			var mseconds = today.getMilliseconds();
-			
+
+			var year = today.getUTCFullYear();
+			var months = today.getUTCMonth() + 1;
+			var days = today.getUTCDate();
+			var hours = today.getUTCHours();
+			var minutes = today.getUTCMinutes();
+			var seconds = today.getUTCSeconds();
+			var mseconds = today.getUTCMilliseconds();
+
 			var month = months < 10 ? "0" + months : months;
 			var day = days < 10 ? "0" + days : days;
 			var hour = hours < 10 ? "0" + hours : hours;
@@ -57,13 +57,10 @@
 			var msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
 			var date = year + "-" + month + "-" + day;
 			var time = hour + ":" + minute + ":" + second + "." + msecond;
-			var dateTime = date + " " + time;
+			var dateTime = date + "T" + time + "Z";
 			document.getElementById("datetime").innerHTML = dateTime;
-			document.title = hour + ":" + minute + ":" + second;
 			setTimeout(clock, 1);
-			
 		}
-		
 	clock()
 	</script>
 </body>

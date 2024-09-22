@@ -37,7 +37,7 @@
 	}
 	@media only screen and (orientation: portrait) {
 		#countDownBar {
-			height: 50px;
+			height: 60px;
 			font-size: xx-large;
 			padding-top: 2%;
 		}
@@ -61,29 +61,19 @@
 <script>
 	var i=0
 function progress() {
+	var countDownTarget = new Date().getFullYear() + 1;
 	if (i == 0) {
 		i = 1;
 		var elem = document.getElementById("countDownBar");
 		var width = 0;
 		function frame() {
-			var today = new Date();
-			var year = today.getFullYear();
-			var months = today.getMonth() + 1;
-			var days = today.getDate();
-			var month = months < 10 ? "0" + months : months;
-			var day = days < 10 ? "0" + days : days;
-
-
-			var empty = (new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds())
-			var full = 864000
-
-			if (( empty / full ) >= 100) {
+			document.getElementById("caption").innerHTML = new Date().getFullYear() + "-" + ((new Date().getMonth()+1) < 10 ? "0" + (new Date().getMonth()+1) : (new Date().getMonth()+1)) + "-" + (new Date().getDate() < 10 ? "0" + new Date().getDate() : new Date().getDate()) + " Progressbar";
+			if (((new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) / ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00")) * 100).toFixed(8) >= 100) {
 				clearInterval(id);
 				i = 0;
 			} else {
-				document.getElementById("caption").innerHTML = year + "-" + month + "-" + day + " Progressbar";
-				elem.style.width = ( empty / full ).toFixed(4) + "%";
-				elem.innerHTML = ( empty / full ).toFixed(4)  + "%";
+				elem.style.width = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4) + "%";
+				elem.innerHTML = ((new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds()) / 864000).toFixed(4)  + "%";
 			}
 		}
 		
