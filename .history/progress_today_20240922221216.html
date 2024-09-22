@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<title>Progressbar of today</title>
+<style>
+	html {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+#countDownProgress {
+	width: 100%;
+	background-color: #ddd;
+	border-radius: 1cm;
+}
+
+#countDownBar {
+	width: 0%;
+	height: 30px;
+	background-color: #2f8;
+	text-align: center;
+	line-height: 30px;
+	color: #111;
+	border-radius:1cm;
+	font-size: x-large;
+	cursor: wait;
+	transition:ease-out 0.33s;
+
+}
+	@media (prefers-color-scheme: dark) {
+		#countDownProgress {
+			background-color: #333;
+		}
+		#countDownBar {
+			background-color: #496;
+			color: #ddd;
+
+		}
+		html {
+			color: #ddd;
+			background-color: #222;
+		}
+	}
+	@media only screen and (orientation: portrait) {
+		#countDownBar {
+			height: 50px;
+			font-size: xx-large;
+			padding-top: 2%;
+		}
+		#countDownBar2 {
+			height: 60px;
+			font-size: xx-large;
+		}
+	}
+	@media only screen and (orientation: portrait) {
+		.countDownBar {
+			height: 50px;
+			font-size: xx-large;
+			padding-top: 2%;
+		}
+		h1 {
+			font-size: 8vw;
+		}
+		h2 {
+			font-size: 6vw;
+		}
+	}
+</style>
+<body>
+
+<h1 id="caption" style="text-align: center;"></h1>
+
+<div id="countDownProgress">
+	<div id="countDownBar"></div>
+</div>
+
+<br>
+
+<script>
+	var i=0
+function progress() {
+	if (i == 0) {
+		i = 1;
+		var elem = document.getElementById("countDownBar");
+		var width = 0;
+		function frame() {
+			var today = new Date();
+			var year = today.getFullYear();
+			var months = today.getMonth() + 1;
+			var days = today.getDate();
+			var month = months < 10 ? "0" + months : months;
+			var day = days < 10 ? "0" + days : days;
+
+
+			var empty = (new Date().getHours() * 3600000 + new Date().getMinutes() * 60000 + new Date().getSeconds() * 1000 + new Date().getMilliseconds())
+			var full = 864000
+
+			if (( empty / full ) >= 100) {
+				clearInterval(id);
+				i = 0;
+			} else {
+				document.getElementById("caption").innerHTML = year + "-" + month + "-" + day + " Progressbar";
+				elem.style.width = ( empty / full ).toFixed(4) + "%";
+				elem.innerHTML = ( empty / full ).toFixed(4)  + "%";
+			}
+		}
+		
+	setInterval(frame, 50);
+	}
+
+}
+function count() {
+	progress();
+	setTimeout(count, 1)
+}
+
+count()
+</script>
+
+</body>
+</html>
