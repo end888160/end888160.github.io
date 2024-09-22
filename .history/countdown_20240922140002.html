@@ -173,7 +173,7 @@ var x = setInterval(function countdown() {
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
 	if ( currentTimeZone === "UTC" ) {
-		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in" + currentTimeZone;
 	} else {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone + " (UTC" + offsetTimeZone + ")";
 	}

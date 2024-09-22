@@ -59,7 +59,6 @@
 			var time = hour + ":" + minute + ":" + second + "." + msecond;
 			var dateTime = date + "T" + time + "Z";
 			document.getElementById("datetime").innerHTML = dateTime;
-			document.title = hour + ":" + minute + ":" + second + " UTC";
 			setTimeout(clock, 1);
 		}
 	clock()

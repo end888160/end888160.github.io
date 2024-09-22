@@ -135,19 +135,19 @@ var x = setInterval(function countdown() {
 	var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
 	var currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 	var offsetTimeZone = new Date().getTimezoneOffset();
-
 	if (offsetTimeZone > 0){
-    var offsetTimeZonem = offsetTimeZone - (Math.floor(offsetTimeZone / 60) * 60);
-    } else if (offsetTimeZone < 0){
-      var offsetTimeZonem = offsetTimeZone - (Math.ceil(offsetTimeZone / 60) * 60);
+    offsetTimeZonem = offsetTimeZone - (Math.floor(offsetTimeZone / 60) * 60);
+    } else {
+      offsetTimeZonem = offsetTimeZone - (Math.ceil(offsetTimeZone / 60) * 60);
+
     }
-	
     offsetTimeZone = (offsetTimeZone / 60) * (-1);
     if (offsetTimeZone > 0){
-       var offsetTimeZone = "+" + offsetTimeZone;
-    } else if (offsetTimeZonem < 10){
-       var offsetTimeZonem = "0" + offsetTimeZonem;
-	}
+       offsetTimeZone = "+" + offsetTimeZone;
+    }
+    if (offsetTimeZonem < 10){
+       offsetTimeZonem = "0" + offsetTimeZonem;
+    }
 
 	// Get today's date and time
 	var now = new Date().getTime();
@@ -172,8 +172,8 @@ var x = setInterval(function countdown() {
 	document.getElementById("minutes").innerHTML = minute;
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
-	if ( currentTimeZone === "UTC" ) {
-		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;
+	if ( currentTimeZone === "undefined" ) {
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN"
 	} else {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone + " (UTC" + offsetTimeZone + ")";
 	}
