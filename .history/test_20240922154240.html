@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<style>
+	html {
+		background-color: black;
+		color:wheat;
+		text-align: center;
+	}
+</style>   
+<h1 id="test"></h1>
+<h2 id="test2"></h2>
+<script>
+	function timec() {
+		var countDownPast = Math.floor(new Date().getFullYear()/10)*10;
+		// (new Date("Jan 1, " + (countDownPast) + " 00:00:00")).getTime()*100
+		document.getElementById("test").innerHTML = new Date().getTime() - (new Date("Jan 1, " + (countDownPast) + " 00:00:00")).getTime()*100;
+		document.getElementById("test").innerHTML =
+		setTimeout(timec, 1);    
+}
+	timec()  
+</script>
