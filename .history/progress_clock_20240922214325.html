@@ -12,7 +12,7 @@
 }
 
 .countDownBar {
-	width: 0%;
+	width: 10%;
 	height: 30px;
 	background-color: #2d8;
 	text-align: center;
@@ -20,7 +20,7 @@
 	color: #111;
 	border-radius:1cm;
 	font-size: x-large;
-	transition:ease-out 0.33s;
+	transition: 0s;
 	cursor: wait;
 }
 	@media (prefers-color-scheme: dark) {
@@ -43,13 +43,6 @@
 			font-size: xx-large;
 			padding-top: 2%;
 		}
-	}
-	@media only screen and (orientation: portrait) {
-		.countDownBar {
-			height: 50px;
-			font-size: xx-large;
-			padding-top: 2%;
-		}
 		h1 {
 			font-size: 8vw;
 		}
@@ -57,127 +50,11 @@
 			font-size: 6vw;
 		}
 	}
+	
 </style>
 <body>
 
 <h1 id="caption" style="text-align: center;"></h1>
-
-<h2>Millenium</h2>
-<div id="millenium" class="countDownProgress">
-	<div id="Millenium" class="countDownBar"></div>
-</div>
-<script>
-	var i=0
-function progress() {
-	if (i == 0) {
-		i = 1;
-		var elem = document.getElementById("Millenium");
-		var width = 0;
-		function frame() {
-			var countDownTarget = Math.floor(new Date().getFullYear()/1000+1)*1000 +1;
-			var countDownPast = Math.floor(new Date().getFullYear()/1000)*1000 +1;
-
-			var empty = new Date().getTime() - new Date("Jan 1, " + countDownPast + " 00:00:00").getTime();
-			var full = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + countDownPast + " 00:00:00").getTime();
-
-			if (( empty / full ) >= 101) {
-				clearInterval(id);
-				i = 0;
-			} else {
-				elem.style.width = ( empty / full *100).toFixed(10) + "%";
-				elem.innerHTML = ( empty / full *100 ).toFixed(10)  + "%";
-			}
-		}
-		
-	setInterval(frame, 50);
-	}
-
-}
-function count() {
-	progress();
-	setTimeout(count, 1)
-}
-count()
-</script>
-
-<h2>Century</h2>
-<div id="century" class="countDownProgress">
-	<div id="Century" class="countDownBar"></div>
-</div>
-<script>
-	var i=0
-function progress() {
-	if (i == 0) {
-		i = 1;
-		var elem = document.getElementById("Century");
-		var width = 0;
-		function frame() {
-			var countDownTarget = Math.floor(new Date().getFullYear()/100+1)*100 +1;
-			var countDownPast = Math.floor(new Date().getFullYear()/100)*100 +1;
-
-			var empty = new Date().getTime() - new Date("Jan 1, " + countDownPast + " 00:00:00").getTime();
-			var full = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + countDownPast + " 00:00:00").getTime();
-
-			if (( empty / full ) >= 101) {
-				clearInterval(id);
-				i = 0;
-			} else {
-				elem.style.width = ( empty / full *100).toFixed(9) + "%";
-				elem.innerHTML = ( empty / full *100 ).toFixed(9)  + "%";
-			}
-		}
-		
-	setInterval(frame, 50);
-	}
-
-}
-function count() {
-	progress();
-	setTimeout(count, 1)
-}
-count()
-</script>
-
-
-<h2>Decade</h2>
-<div id="decade" class="countDownProgress">
-	<div id="Decade" class="countDownBar"></div>
-</div>
-<script>
-	var i=0
-function progress() {
-	if (i == 0) {
-		i = 1;
-		var elem = document.getElementById("Decade");
-		var width = 0;
-		function frame() {
-			var countDownTarget = Math.floor(new Date().getFullYear()/10+1)*10 +1;
-			var countDownPast = Math.floor(new Date().getFullYear()/10)*10 +1;
-
-			var empty = new Date().getTime() - new Date("Jan 1, " + countDownPast + " 00:00:00").getTime();
-			var full = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + countDownPast + " 00:00:00").getTime();
-
-			if (( empty / full ) >= 101) {
-				clearInterval(id);
-				i = 0;
-			} else {
-				elem.style.width = ( empty / full *100).toFixed(8) + "%";
-				elem.innerHTML = ( empty / full *100 ).toFixed(8)  + "%";
-			}
-		}
-		
-	setInterval(frame, 50);
-	}
-
-}
-function count() {
-	progress();
-	setTimeout(count, 1)
-}
-count()
-</script>
-
-
 
 <h2>Year</h2>
 <div id="year" class="countDownProgress">
