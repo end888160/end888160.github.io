@@ -1,6 +1,6 @@
 ## ⌚️ Clock
 
-Inspired by: [StefanGrace&#39;s Big_Clock](https://github.com/StefanGrace/Big_Clock)
+Inspired by: [StefanGrace's Big_Clock](https://github.com/StefanGrace/Big_Clock)
 
 ### Local time
 
@@ -9,6 +9,12 @@ Inspired by: [StefanGrace&#39;s Big_Clock](https://github.com/StefanGrace/Big_Cl
 ### UTC time (ISO 8601 format)
 
 [https://end888160.github.io/clock_utc_iso8601.html](https://end888160.github.io/clock_utc_iso8601.html)
+
+### Swatch Internet Time
+
+Original from: [http://www.swatchclock.com/index.php](http://www.swatchclock.com/index.php)
+
+[https://end888160.github.io/swatchclock.html](https://end888160.github.io/swatchclock.html)
 
 <br>
 
