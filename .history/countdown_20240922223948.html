@@ -1,28 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Let's celebrate the New Year!">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
 	<title>Countdown</title>
 	<style>
-	body {
-		font-family: "M PLUS Rounded 1c", "Lato", "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	html {
+		font-family: Arial, Helvetica, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
 	#countdown {
 		display: flex;
 		justify-content: center;
-		font-family:  sans-serif;
-  		font-weight: 400;
-		  font-size: 5vh;
+		
+		font-size: 5vh;
 		margin-top: 5%;
 		color: #333;
 		border-color: white;
-		font-family: "M PLUS Rounded 1c", "Lato", "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+		
 		
 	}
 	.counttdown-table {
@@ -33,7 +28,6 @@
 		margin: 0 10px;
 		text-align: center;
 		display: table-cell;
-  		font-style: normal;
 		
 	}
 	
@@ -49,11 +43,10 @@
 		font-size: 0.8em;
 		text-align: center;
 		color: #777;
-		font-weight: 400;
 	}
 	h1 {
 		text-align: center;
-		font-size: 7vh;
+		font-size: xx-large;
 
 	}
 	
@@ -109,22 +102,22 @@
 	<div id="countdown-table">
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="days"></span></div>
-		<div class="countdown-label">日</div>
+		<div class="countdown-label">Days</div>
 	</div>
 
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="hours"></span></div>
-		<div class="countdown-label">時間</div>
+		<div class="countdown-label">Hours</div>
 	</div>
 
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="minutes"></span></div>
-		<div class="countdown-label">分</div>
+		<div class="countdown-label">Minutes</div>
 	</div>
 
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="seconds"></span></div>
-		<div class="countdown-label">秒</div>
+		<div class="countdown-label">Seconds</div>
 	</div>
 
 	<div class="countdown-item">
@@ -197,7 +190,11 @@ var x = setInterval(function countdown() {
 	document.getElementById("minutes").innerHTML = minute;
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
-	document.getElementById("header").innerHTML =　countDownTarget + "年まで";
+	if ( currentTimeZone === "UTC" ) {
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;
+	} else {
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone + " (UTC" + offsetTimeZone + ")";
+	}
 	
 	
 	// If the count down is finished, write some text
