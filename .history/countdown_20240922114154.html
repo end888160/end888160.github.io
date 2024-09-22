@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
 	#countdown {
 		display: flex;
 		justify-content: center;
-		font-family:"Lato","Noto Sans JP","ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+		font-family: Arial, Helvetica, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: xx-large;
 		margin-top: 5%;
 		color: #333;
@@ -44,7 +43,7 @@
 	}
 	h1 {
 		text-align: center;
-		font-family: "Lato","Noto Sans JP","ヒラギノ角ゴ ProN","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+		font-family: Arial, Helvetica, sans-serif;
 		font-size: xx-large;
 
 	}
@@ -101,22 +100,22 @@
 	<div id="countdown-table">
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="days"></span></div>
-		<div class="countdown-label">日</div>
+		<div class="countdown-label">Days</div>
 	</div>
 
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="hours"></span></div>
-		<div class="countdown-label">時間</div>
+		<div class="countdown-label">Hours</div>
 	</div>
 
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="minutes"></span></div>
-		<div class="countdown-label">分</div>
+		<div class="countdown-label">Minutes</div>
 	</div>
 
 	<div class="countdown-item">
 		<div class="countdown-value"><span id="seconds"></span></div>
-		<div class="countdown-label">秒</div>
+		<div class="countdown-label">Seconds</div>
 	</div>
 
 	<div class="countdown-item">
@@ -189,7 +188,11 @@ var x = setInterval(function countdown() {
 	document.getElementById("minutes").innerHTML = minute;
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
-	document.getElementById("header").innerHTML =　countDownTarget + "年まで";
+	if ( currentTimeZone === "UTC" ) {
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;
+	} else {
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone + " (UTC" + offsetTimeZone + ")";
+	}
 	
 	
 	// If the count down is finished, write some text
