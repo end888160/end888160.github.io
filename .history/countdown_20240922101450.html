@@ -6,25 +6,21 @@
 	<meta name="description" content="Let's celebrate the New Year!">
 	<title>Countdown</title>
 	<style>
-	#countdown {
+	.countdown {
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		text-align: center;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: xx-large;
 		margin-top: 5%;
 		color: #333;
-		border-color: white;
 		
-		
-	}
-	.counttdown-table {
-		display: table;
 	}
 	
 	.countdown-item {
 		margin: 0 10px;
 		text-align: center;
-		display: table-cell;
 		
 	}
 	
@@ -38,7 +34,7 @@
 	
 	.countdown-label {
 		font-size: 0.8em;
-		text-align: center;
+		
 		color: #777;
 	}
 	h1 {
@@ -71,20 +67,20 @@
 	}
 	@media only screen and (orientation: portrait) {
 		.countdown {
+			/* display: inline-flex; */
 			display: table-row-group;
-		}
-		.countdown-item {
-			display: table-row;
+			margin-left: 100%;
+			align-items: center;
+			align-content: center;
+			text-align: center;
 		}
 		.countdown-label {
 			display: table-cell;
-			text-align: left;
 		}
 		.countdown-value {
 			display: table-cell;
 			padding-top: 15px;
-			text-align: right;
-			
+
 		}
 		h1 {
 			font-size: x-large;
@@ -92,37 +88,31 @@
 	}
 	</style>
 </head>
-
 <body>
-	<h1 id="header">NEW YEAR COUNTDOWN</h1>
-
-<div id="countdown">
-	<div id="countdown-table">
+	<h1 id="header"></h1>
+	<div class="countdown">
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="days"></span></div>
+		<div class="countdown-value" id="days"></div>
 		<div class="countdown-label">Days</div>
 	</div>
-
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="hours"></span></div>
+		<div class="countdown-value" id="hours"></div>
 		<div class="countdown-label">Hours</div>
 	</div>
-
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="minutes"></span></div>
+		<div class="countdown-value" id="minutes"></div>
 		<div class="countdown-label">Minutes</div>
 	</div>
-
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="seconds"></span></div>
+		<div class="countdown-value" id="seconds"></div>
 		<div class="countdown-label">Seconds</div>
 	</div>
-
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="mseconds"></span></div>
+		<div class="countdown-value" id="mseconds"></div>
 		<div class="countdown-label"><br></div>
 	</div>
-</div>
+	<div class="countdown-item">
+	</div>
 </div>
 
 <script>

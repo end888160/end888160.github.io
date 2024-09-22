@@ -17,14 +17,10 @@
 		
 		
 	}
-	.counttdown-table {
-		display: table;
-	}
 	
 	.countdown-item {
 		margin: 0 10px;
 		text-align: center;
-		display: table-cell;
 		
 	}
 	
@@ -70,8 +66,12 @@
 		}
 	}
 	@media only screen and (orientation: portrait) {
-		.countdown {
-			display: table-row-group;
+		#countdown {
+			/* display: inline-flex; */
+			display:
+		}
+		table {
+			justify-content: cen;
 		}
 		.countdown-item {
 			display: table-row;
@@ -81,7 +81,6 @@
 			text-align: left;
 		}
 		.countdown-value {
-			display: table-cell;
 			padding-top: 15px;
 			text-align: right;
 			
@@ -95,36 +94,34 @@
 
 <body>
 	<h1 id="header">NEW YEAR COUNTDOWN</h1>
-
+<table>
 <div id="countdown">
-	<div id="countdown-table">
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="days"></span></div>
+		<div class="countdown-value" id="days"></div>
 		<div class="countdown-label">Days</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="hours"></span></div>
+		<div class="countdown-value" id="hours"></div>
 		<div class="countdown-label">Hours</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="minutes"></span></div>
+		<div class="countdown-value" id="minutes"></div>
 		<div class="countdown-label">Minutes</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="seconds"></span></div>
+		<div class="countdown-value" id="seconds"></div>
 		<div class="countdown-label">Seconds</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="mseconds"></span></div>
+		<div class="countdown-value" id="mseconds"></div>
 		<div class="countdown-label"><br></div>
 	</div>
 </div>
-</div>
-
+</table>
 <script>
 	   
 // Update the count down every 1 second]
