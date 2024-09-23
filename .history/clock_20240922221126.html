@@ -2,11 +2,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Simple ISO8601 Time</title>
+	<title>Simple HTML Clock</title>
 	<style>
 	html {
 		font-family: Arial, Helvetica, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		transition:ease 0.33s;
 	}
 	h1{
 		text-align: center;
@@ -22,21 +21,20 @@
 		overflow: hidden; /* Hide scrollbars */
 	}
 	@media (prefers-color-scheme: light) {
-		body {
+		html {
 		background-color: white;
 		color: black;
 		}
 	}
 	@media (prefers-color-scheme: dark) {
-		body {
+		html {
 		background-color: black;
 		color: white;
 		}
 	}
 	@media only screen and (orientation: portrait) {
 		h1 {
-			font-size: 7.5vw;
-			word-wrap: break-word;
+			font-size: 15vw;
 		}
 	}
 	</style>
@@ -47,16 +45,16 @@
 	</div>
 	<script>
 		function clock() {
+			
 			var today = new Date();
-
-			var year = today.getUTCFullYear();
-			var months = today.getUTCMonth() + 1;
-			var days = today.getUTCDate();
-			var hours = today.getUTCHours();
-			var minutes = today.getUTCMinutes();
-			var seconds = today.getUTCSeconds();
-			var mseconds = today.getUTCMilliseconds();
-
+			var year = today.getFullYear();
+			var months = today.getMonth() + 1;
+			var days = today.getDate();
+			var hours = today.getHours();
+			var minutes = today.getMinutes();
+			var seconds = today.getSeconds();
+			var mseconds = today.getMilliseconds();
+			
 			var month = months < 10 ? "0" + months : months;
 			var day = days < 10 ? "0" + days : days;
 			var hour = hours < 10 ? "0" + hours : hours;
@@ -65,11 +63,13 @@
 			var msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
 			var date = year + "-" + month + "-" + day;
 			var time = hour + ":" + minute + ":" + second + "." + msecond;
-			var dateTime = date + "T" + time + "Z";
+			var dateTime = date + " " + time;
 			document.getElementById("datetime").innerHTML = dateTime;
-			document.title = hour + ":" + minute + ":" + second + " UTC";
+			document.title = hour + ":" + minute + ":" + second;
 			setTimeout(clock, 1);
+			
 		}
+		
 	clock()
 	</script>
 </body>
