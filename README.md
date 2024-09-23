@@ -20,6 +20,8 @@ Original from: [http://www.swatchclock.com/index.php](http://www.swatchclock.com
 
 ## ⏰ Countdown Timer
 
+Inspired by:[@logoblocks](https://www.youtube.com/@logoblocks)
+
 [https://end888160.github.io/countdown.html](https://end888160.github.io/countdown.html)
 
 Legacy browser support
