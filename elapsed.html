@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html>
+    <h1 id="elapsed"></h1>
 <Script>
 // Function to calculate elapsed days
 function getElapsedDays(startDate) {
@@ -17,6 +19,7 @@ function getElapsedDays(startDate) {
 // Example usage: Specify the start date in 'YYYY-MM-DD' format
 const startDate = '2023-08-01';
 const elapsedDays = getElapsedDays(startDate);
+document.getElementById("elapsed").innerHTML = `Elapsed days since ${startDate}: ${elapsedDays}`;
 
-console.log(`Elapsed days since ${startDate}: ${elapsedDays}`);
 </script>
+</html>
