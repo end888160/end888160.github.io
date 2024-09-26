@@ -12,12 +12,13 @@ function getElapsedDays(startDate) {
 
     // Convert the time difference from milliseconds to days
     const daysElapsed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    document.getElementById("elapsed").innerHTML = "Elapsed days since " + timeDifference;
 }
 
 // Example usage: Specify the start date in 'YYYY-MM-DD' format
 const startDate = '2023-08-01';
 const elapsedDays = getElapsedDays(startDate);
-document.getElementById("elapsed").innerHTML = "Elapsed days since " + timeDifference;
 
 </script>
 </html>
