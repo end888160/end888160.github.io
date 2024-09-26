@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Let's celebrate the New Year!">
-	<title>Countdown</title>
+	<meta name="description" content="Countup">
+	<title>Elapsed</title>
 	<style>
 	html {
 		font-family: Arial, Helvetica, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -13,7 +13,7 @@
 	body {
 		margin-top:5%;
 	}
-	#countdown {
+	#countup {
 		display: flex;
 		justify-content: center;
 		
@@ -23,18 +23,18 @@
 		
 		
 	}
-	.counttdown-table {
+	.countup-table {
 		display: table;
 	}
 	
-	.countdown-item {
+	.countup-item {
 		margin: 0 10px;
 		text-align: center;
 		display: table-cell;
 		
 	}
 	
-	.countdown-value {
+	.countup-value {
 		font-size: 2.75em;
 		font-weight: bold;
 		padding-left: 20px;
@@ -42,7 +42,7 @@
 		
 	}
 	
-	.countdown-label {
+	.countup-label {
 		font-size: 0.75em;
 		text-align: center;
 		color: #777;
@@ -63,7 +63,7 @@
 		}
 	}
 	@media (prefers-color-scheme: dark) {
-		.countdown-item {
+		.countup-item {
 			color: #bbb
 		}
 		h2 {
@@ -78,18 +78,18 @@
 		body {
 			margin-top:2.5%;
 		}
-		.countdown {
+		.countup {
 			display: table-row-group;
 		}
-		.countdown-item {
+		.countup-item {
 			display: table-row;
 		}
-		.countdown-label {
+		.countup-label {
 			display: table-cell;
 			font-size: 1em;
 			text-align: left;
 		}
-		.countdown-value {
+		.countup-value {
 			display: table-cell;
 			font-size: 2em;
 			padding-top: 5%;
@@ -106,31 +106,31 @@
 <body>
 	<h1 id="header"></h1>
 
-<div id="countdown">
-	<div id="countdown-table">
-	<div class="countdown-item">
-		<div class="countdown-value"><span id="days"></span></div>
-		<div class="countdown-label">Days</div>
+<div id="countup">
+	<div id="countup-table">
+	<div class="countup-item">
+		<div class="countup-value"><span id="days"></span></div>
+		<div class="countup-label">Days</div>
 	</div>
 
-	<div class="countdown-item">
-		<div class="countdown-value"><span id="hours"></span></div>
-		<div class="countdown-label">Hours</div>
+	<div class="countup-item">
+		<div class="countup-value"><span id="hours"></span></div>
+		<div class="countup-label">Hours</div>
 	</div>
 
-	<div class="countdown-item">
-		<div class="countdown-value"><span id="minutes"></span></div>
-		<div class="countdown-label">Minutes</div>
+	<div class="countup-item">
+		<div class="countup-value"><span id="minutes"></span></div>
+		<div class="countup-label">Minutes</div>
 	</div>
 
-	<div class="countdown-item">
-		<div class="countdown-value"><span id="seconds"></span></div>
-		<div class="countdown-label">Seconds</div>
+	<div class="countup-item">
+		<div class="countup-value"><span id="seconds"></span></div>
+		<div class="countup-label">Seconds</div>
 	</div>
 
-	<div class="countdown-item">
-		<div class="countdown-value"><span id="mseconds"></span></div>
-		<div class="countdown-label"><br></div>
+	<div class="countup-item">
+		<div class="countup-value"><span id="mseconds"></span></div>
+		<div class="countup-label"><br></div>
 	</div>
 </div>
 </div>
@@ -148,12 +148,12 @@ if ( new Date().getDate() === 1 )  {
 } else {
 	var IfMonth = "false"
 }
-var countDownTarget = 1945;
+var countupTarget = 1945;
 
-var x = setInterval(function countdown() {
+var x = setInterval(function countup() {
 
 	// Set the date we're counting down to
-	var countDownDate = new Date("Aug 6, " + countDownTarget + " 08:15:17").getTime();
+	var countupDate = new Date("Aug 6, " + countupTarget + " 08:15:17").getTime();
 	var currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 	var offsetTimeZone = new Date().getTimezoneOffset();
 
@@ -174,7 +174,7 @@ var x = setInterval(function countdown() {
 	var now = new Date().getTime();
 	
 	// Find the distance between now and the count down date
-	var distance = ( now - countDownDate ) ;
+	var distance = ( now - countupDate ) ;
 	
 	// Time calculations for days, hours, minutes and seconds
 	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -187,7 +187,7 @@ var x = setInterval(function countdown() {
 	var mseconds = Math.floor(distance % 1000);
 	var msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
 	
-	// Display the result in the element with id="countdown"
+	// Display the result in the element with id="countup"
 	document.getElementById("days").innerHTML = days;
 	document.getElementById("hours").innerHTML = hour;
 	document.getElementById("minutes").innerHTML = minute;
@@ -199,7 +199,7 @@ var x = setInterval(function countdown() {
 	// If the count down is finished, write some text
 
 }, 0);
-document.title = "Days since " + countDownTarget;
+document.title = "Days since " + countupTarget;
 </script>
 </body>
 </html>
