@@ -10,8 +10,13 @@
 		background-color: #000082!important;
 		color:#ffffff!important;
 	}
-
+	body {
+		background-color: #000082!important;
+		color:#ffffff!important;
+	}
 </style>
+
+<body id="appin" onclick="toggleFullscreen();">
 <p>
 A problem has been detected and Windows has been shut down to prevent damage<br>
 	to your computer.<br>
@@ -41,6 +46,19 @@ Technical Information:<br>
 <br>
 ***  SPCMDCONC.SYS - Address FBFE7617 base at FBFE5000, DateStamp 3d6dd67c<br>
 </p>
+
+</body>
+  <script>
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
 </html>
 
 
