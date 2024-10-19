@@ -78,8 +78,8 @@ function progress() {
 		var width = 0;
 		function frame() {
 			var countDownTarget = new Date().getUTCFullYear() + 1;
-			var empty = ( new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00"))
-			var full = ( new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00"))/100
+			var empty = ( new Date().getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00 GMT"))
+			var full = ( new Date("Jan 1, " + countDownTarget + " 00:00:00 GMT").getTime() - new Date("Jan 1, " + ( countDownTarget - 1) + " 00:00:00 GMT"))/100
 
 			if (( empty / full ) >= 100) {
 				clearInterval(id);
