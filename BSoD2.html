@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<title>BSoD</title>
+	<title>BlueScreen</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -35,6 +35,7 @@
 	}
 
 </style>
+<body onclick="toggleFullscreen();">
 <div id="face">:(</div><br>
 <div id="your">Your device ran into a problem and needs to restart.<br> 
 	We're just collecting some error info, and then we'll<br>
@@ -46,6 +47,18 @@
 		<br>
 		<div id="If">If you call a support person, give them this info:<br><br>
 		Stop code: 0xc0000022 </div>
+</body>
+<script>
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+</script>
 </html>
 
 
