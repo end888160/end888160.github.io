@@ -1,0 +1,16 @@
+{
+    "name": "progressbar Clock",
+    "short_name": "Bar Clock",
+    "description": "progressbar",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "32x32",
+            "type": "image/x-icon"
+        }
+    ],
+    "start_url": "progress_clock.html",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#000000"
+}
