@@ -88,24 +88,9 @@
 </div>
 
 <script>
-	   
-// Update the count down every 1 second]
-if ( new Date().getMonth() + 1 === 1 )  {
-    var IfMonth = true
-} else {
-	var IfMonth = "false"
-}
-if ( new Date().getDate() === 1 )  {
-    var IfDate = true
-} else {
-	var IfMonth = "false"
-}
-if ( IfMonth === IfDate ) {
-    var countDownTarget = new Date().getFullYear();
-} else {
-	var countDownTarget = new Date().getFullYear() + 1;
-}
 
+// Set the date we're counting down to
+var countDownTarget = new Date().getFullYear() + 1;
 
 var x = setInterval(function countdown() {
 
@@ -140,7 +125,7 @@ var x = setInterval(function countdown() {
 	
 	
 	// If the count down is finished, write some text
-	if (distance < 0) {
+	if ( new Date().getMonth() + 1 === 12 && new Date().getDate() === 1 ) {
 		clearInterval(x);
 		document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
 	}
@@ -150,7 +135,7 @@ document.title = "Countdown to " + countDownTarget;
 
 </script>
 <noscript>
-	<h1>Noscript</h1>
+	<h1>Enable JavaScript to see the countdown!</h1>
 </noscript>
 </body>
 </html>

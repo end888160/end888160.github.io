@@ -51,7 +51,7 @@
 			
 			var today = new Date();
 			var year = today.getFullYear();
-			var months = today.getMonth() + 1;
+			var months = today.getMonth() + 1; // January is 0
 			var days = today.getDate();
 			var hours = today.getHours();
 			var minutes = today.getMinutes();
@@ -67,9 +67,9 @@
 			var date = year + "-" + month + "-" + day;
 			var time = hour + ":" + minute + ":" + second + "." + msecond;
 			var dateTime = date + " " + time;
-			document.getElementById("datetime").innerHTML = dateTime;
-			document.title = hour + ":" + minute + ":" + second;
-			setTimeout(clock, 1);
+			document.getElementById("datetime").innerHTML = dateTime; 
+			document.title = hour + ":" + minute + ":" + second; // Update the title with the current time
+			setTimeout(clock, 1); // Update every 1 ms 
 			
 		}
 		

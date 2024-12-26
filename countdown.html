@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="description" content="Let's celebrate the New Year!">
 	<title>Countdown</title>
 	<style>
@@ -105,6 +106,8 @@
 
 <body>
 	<h1 id="header">NEW YEAR COUNTDOWN</h1>
+	<noscript>
+		<h2>Enable JavaScript to see the countdown!</h2>
 
 <div id="countdown">
 	<div id="countdown-table">
@@ -137,23 +140,7 @@
 
 <script>
 
-// Update the count down every 1 second]
-if ( new Date().getMonth() + 1 === 1 )  {
-    var IfMonth = true
-} else {
-	var IfMonth = "false"
-}
-if ( new Date().getDate() === 1 )  {
-    var IfDate = true
-} else {
-	var IfMonth = "false"
-}
-if ( IfMonth === IfDate ) {
-    var countDownTarget = new Date().getFullYear();
-} else {
-	var countDownTarget = new Date().getFullYear() + 1;
-}
-
+var countDownTarget = new Date().getFullYear() + 1;
 
 var x = setInterval(function countdown() {
 
@@ -161,13 +148,13 @@ var x = setInterval(function countdown() {
 	var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
 	var currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 	var offsetTimeZone = new Date().getTimezoneOffset();
-
+_
+	// Get the offset time zone
 	if (offsetTimeZone > 0){
     var offsetTimeZonem = offsetTimeZone - (Math.floor(offsetTimeZone / 60) * 60);
     } else if (offsetTimeZone < 0){
       var offsetTimeZonem = offsetTimeZone - (Math.ceil(offsetTimeZone / 60) * 60);
     }
-	
     offsetTimeZone = (offsetTimeZone / 60) * (-1);
     if (offsetTimeZone > 0){
 		var offsetTimeZone = "+" + offsetTimeZone;
@@ -198,16 +185,17 @@ var x = setInterval(function countdown() {
 	document.getElementById("minutes").innerHTML = minute;
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
-	if ( currentTimeZone === "UTC" ) {
+
+	if ( currentTimeZone === "undefined") {
+		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN";
+	} else if ( currentTimeZone === "UTC" ) {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone;
 	} else {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN in " + currentTimeZone + " (UTC" + offsetTimeZone + ")";
 	}
 	
-	
 	// If the count down is finished, write some text
-	if (distance < 0) {
-		clearInterval(x);
+	if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
 		document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
 	}
 	setTimeout(countdown, 1);
