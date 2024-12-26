@@ -108,7 +108,7 @@
 	<h1 id="header">NEW YEAR COUNTDOWN</h1>
 	<noscript>
 		<h2>Enable JavaScript to see the countdown!</h2>
-
+	</noscript>
 <div id="countdown">
 	<div id="countdown-table">
 	<div class="countdown-item">
@@ -148,7 +148,7 @@ var x = setInterval(function countdown() {
 	var countDownDate = new Date("Jan 1, " + countDownTarget + " 00:00:00").getTime();
 	var currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 	var offsetTimeZone = new Date().getTimezoneOffset();
-_
+
 	// Get the offset time zone
 	if (offsetTimeZone > 0){
     var offsetTimeZonem = offsetTimeZone - (Math.floor(offsetTimeZone / 60) * 60);
@@ -185,6 +185,7 @@ _
 	document.getElementById("minutes").innerHTML = minute;
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
+	 
 
 	if ( currentTimeZone === "undefined") {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN";
