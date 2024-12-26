@@ -9,6 +9,7 @@
 	<style>
 	html {
 		font-family: Arial, Helvetica, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-variant-numeric: tabular-nums; 
 		transition:ease 0.33s;
 	}
 	body {
@@ -47,6 +48,7 @@
 		font-size: 0.75em;
 		text-align: center;
 		color: #777;
+		text-transform:uppercase;
 	}
 	h1 {
 		text-align: center;
@@ -115,27 +117,27 @@
 <div id="countdown">
 	<div id="countdown-table">
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="days"></span></div>
+		<div class="countdown-value"><span id="days"><noscript>--</noscript></span></div>
 		<div class="countdown-label">Days</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="hours"></span></div>
+		<div class="countdown-value"><span id="hours"><noscript>--</noscript></span></div>
 		<div class="countdown-label">Hours</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="minutes"></span></div>
+		<div class="countdown-value"><span id="minutes"><noscript>--</noscript></span></div>
 		<div class="countdown-label">Minutes</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="seconds"></span></div>
+		<div class="countdown-value"><span id="seconds"><noscript>--</noscript></span></div>
 		<div class="countdown-label">Seconds</div>
 	</div>
 
 	<div class="countdown-item">
-		<div class="countdown-value"><span id="mseconds"></span></div>
+		<div class="countdown-value"><span id="mseconds"><noscript>---</noscript></span></div>
 		<div class="countdown-label"><br></div>
 	</div>
 </div>
@@ -202,9 +204,10 @@ var x = setInterval(function countdown() {
 	if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
 		document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
 	}
+		
+	document.title = "Countdown to " + countDownTarget;
 	setTimeout(countdown, 1);
 }, 0);
-document.title = "Countdown to " + countDownTarget;
 </script>
 </body>
 </html>
