@@ -12,7 +12,7 @@ Inspired by: [StefanGrace&#39;s Big_Clock](https://github.com/StefanGrace/Big_Cl
 
 ### 🇨🇭 Swatch Internet Time
 
-Original from: [http://www.swatchclock.com/index.php](http://www.swatchclock.com/index.php)
+Original from: ~~[http://www.swatchclock.com/index.php](http://www.swatchclock.com/index.php)~~
 
 [https://end888160.github.io/swatchclock.html](https://end888160.github.io/swatchclock.html)
 
