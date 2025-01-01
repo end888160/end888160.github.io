@@ -38,6 +38,29 @@
         p {
             margin-top: 10px;
         }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #fff;
+            }
+            input[type="text"] {
+                background-color: #444;
+                color: #fff;
+            }
+            input[type="text"]::placeholder {
+                color: #888;
+            }
+            button {
+                background-color: #007bff;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            select {
+                background-color: #444;
+                color: #fff;
+            }
+        }
     </style>
 </head>
 <body>
