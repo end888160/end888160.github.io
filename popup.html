@@ -14,6 +14,13 @@
             padding: 5px;
             margin-right: 10px;
         }
+        input[type="text"]:focus {
+            outline: none;
+            border: 1px solid #007bff;
+        }
+        input[type="text"]::placeholder {
+            color: #ccc;
+        }
         button {
             padding: 5px 10px;
             background-color: #4CAF50;
@@ -37,6 +44,7 @@
     <h1>Open input URL in pop-up</h1>
     <noscript>
         <p><strong>JavaScript is disabled in your browser.</strong></p>
+    </noscript>
     <label for="url">URL:</label>
     <input type="text" id="url" value="https://www.google.com" placeholder="https://www.example.com">
     <button onclick="openInPopup()">Open in pop-up</button>
