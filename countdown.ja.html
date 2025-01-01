@@ -192,8 +192,8 @@
 			document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
 		}
 		setTimeout(countdown, 1);
+		document.title = countDownTarget + "年へのカウントダウン (残り "+ (days+hours/24).toFixed(1) + " 日)"
 	}
-	document.title = countDownTarget + "年へのカウントダウン";
 	countdown()
 		</script>
 </body>

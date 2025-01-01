@@ -62,6 +62,9 @@
 		font-size: 1.5em;
 	}
 	@media (prefers-color-scheme: light) {
+		.countdown-item {
+			color: #333;
+		}
 		html {
 			background-color: white;
 			color: black;
@@ -146,7 +149,11 @@
 </div>
 <script>
 
-var countDownTarget = new Date().getFullYear() + 1;
+if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
+	var countDownTarget = new Date().getFullYear();
+} else {
+	var countDownTarget = new Date().getFullYear() + 1;
+}　
 
 var x = setInterval(function countdown() {
 
@@ -191,7 +198,6 @@ var x = setInterval(function countdown() {
 	document.getElementById("minutes").innerHTML = minute;
 	document.getElementById("seconds").innerHTML = second;
 	document.getElementById("mseconds").innerHTML = msecond;
-	 
 
 	if ( currentTimeZone === "undefined") {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN";
@@ -202,11 +208,12 @@ var x = setInterval(function countdown() {
 	}
 	
 	// If the count down is finished, write some text
+	//if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
 	if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
-		document.getElementById("countdown").innerHTML = "HAPPY NEW YEAR!";
+		document.getElementById("countdown").innerHTML = "<strong style='color:orange;'>HAPPY NEW YEAR!</strong>";
 	}
 		
-	document.title = "Countdown to " + countDownTarget;
+	document.title = "Countdown to " + countDownTarget + " (" + (days+hours/24).toFixed(1) + " d left)"
 	setTimeout(countdown, 1);
 }, 0);
 </script>
