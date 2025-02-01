@@ -48,6 +48,7 @@
 	
 	.countdown-label {
 		font-size: 0.75em;
+		font-weight: 500;
 		text-align: center;
 		color: #777;
 		text-transform:uppercase;
@@ -164,9 +165,9 @@ var x = setInterval(function countdown() {
 
 	// Get the offset time zone
 	if (offsetTimeZone > 0){
-    var offsetTimeZonem = offsetTimeZone - (Math.floor(offsetTimeZone / 60) * 60);
+		var offsetTimeZonem = offsetTimeZone - (Math.floor(offsetTimeZone / 60) * 60);
     } else if (offsetTimeZone < 0){
-      var offsetTimeZonem = offsetTimeZone - (Math.ceil(offsetTimeZone / 60) * 60);
+		var offsetTimeZonem = offsetTimeZone - (Math.ceil(offsetTimeZone / 60) * 60);
     }
     offsetTimeZone = (offsetTimeZone / 60) * (-1);
     if (offsetTimeZone > 0){
@@ -180,7 +181,7 @@ var x = setInterval(function countdown() {
 	
 	// Find the distance between now and the count down date
 	var distance = countDownDate - now;
-	
+
 	// Time calculations for days, hours, minutes and seconds
 	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -192,13 +193,6 @@ var x = setInterval(function countdown() {
 	var mseconds = Math.floor(distance % 1000);
 	var msecond = mseconds < 10 ? "0" + "0" + mseconds : mseconds < 100 ? "0" + mseconds : mseconds;
 	
-	// Display the result in the element with id="countdown"
-	document.getElementById("days").innerHTML = days;
-	document.getElementById("hours").innerHTML = hour;
-	document.getElementById("minutes").innerHTML = minute;
-	document.getElementById("seconds").innerHTML = second;
-	document.getElementById("mseconds").innerHTML = msecond;
-
 	if ( currentTimeZone === "undefined") {
 		document.getElementById("header").innerHTML = "NEW YEAR " + countDownTarget + " COUNTDOWN";
 	} else if ( currentTimeZone === "UTC" ) {
@@ -210,10 +204,19 @@ var x = setInterval(function countdown() {
 	// If the count down is finished, write some text
 	//if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
 	if (new Date().getMonth() + 1 === 1 && new Date().getDate() === 1) {
-		document.getElementById("countdown").innerHTML = "<strong style='color:orange;'>HAPPY NEW YEAR!</strong>";
-	}
+		document.getElementById("countdown").innerHTML = "<strong style='color:orange;font-size:1em;text-align:center;'>HAPPY NEW YEAR!</strong>";
+		document.title = "Happy New Year " + countDownTarget + "!";
+	} else {
+		document.title = "Countdown to " + countDownTarget + " (" + (days+hours/24).toFixed(1) + " d left)"
 		
-	document.title = "Countdown to " + countDownTarget + " (" + (days+hours/24).toFixed(1) + " d left)"
+		// Display the result in the element with id="countdown"
+		document.getElementById("days").innerHTML = days;
+		document.getElementById("hours").innerHTML = hour;
+		document.getElementById("minutes").innerHTML = minute;
+		document.getElementById("seconds").innerHTML = second;
+		document.getElementById("mseconds").innerHTML = msecond;
+	}
+	
 	setTimeout(countdown, 1);
 }, 0);
 </script>
