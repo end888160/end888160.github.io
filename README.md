@@ -49,3 +49,11 @@ Inspired by: [@ProgressBar202&#95;](https://x.com/ProgressBar202_)
 ### Clock (Advanced)
 
 [https://end888160.github.io/progress_clock2.html](https://end888160.github.io/progress_clock2.html)
+
+## Miscellaneous
+
+### Popup
+
+Enter the URL in the input field and click the button to open the URL in a new pop-up window.
+
+[https://end888160.github.io/popup.html](https://end888160.github.io/popup.html)
