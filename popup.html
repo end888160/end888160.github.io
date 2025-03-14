@@ -34,6 +34,12 @@
         select {
             padding: 5px;
             margin-right: 10px;;
+            background-color: #f1f1f1;
+            border: 2px solid #ccc;
+        }
+        select:focus {
+            outline: none;
+            border: 2px solid #007bff;
         }
         p {
             margin-top: 10px;
@@ -81,10 +87,15 @@
     <label for="website">Popular websites:</label>
     <select id="website" name="website" onchange="document.getElementById('url').value = this.value;" title="Popular websites">
         <option value="https://www.google.com">Google</option>
+        <option value="https://www.bing.com">Bing</option>
         <option value="https://www.facebook.com">Facebook</option>
         <option value="https://www.twitter.com">Twitter</option>
         <option value="https://www.linkedin.com">LinkedIn</option>
         <option value="https://www.youtube.com">YouTube</option>
+        <option value="https://www.instagram.com">Instagram</option>
+        <option value="https://www.reddit.com">Reddit</option>
+        <option value="https://www.tiktok.com">TikTok</option>
+        <option value="https://www.snapchat.com">Snapchat</option>
     </select>
     <p>Enter the URL in the input field and click the button to open the URL in a new pop-up window.</p>
     <p><strong>Note:</strong> The pop-up window may be blocked by the browser. Please allow pop-ups for this site.</p>
@@ -94,9 +105,12 @@
             var win = window.open(url, '_blank', 'menubar=no, status=no, toolbar=no, resizable=no,  titlebar=no, alwaysRaised=yes');
             win.focus();
         }
+        
+        document.addEventListener('keydown', function(event) {
         if ( event.key === "Enter" ) {
             openInPopup();
         }
+    });
         
     </script>
 </body>
